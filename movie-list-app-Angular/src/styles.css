@@ -1,0 +1,23 @@
+:root {
+  --grad-1: #0f2027;
+  --grad-2: #203a43;
+  --grad-3: #2c5364;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  background: linear-gradient(120deg, var(--grad-1), var(--grad-2), var(--grad-3));
+  background-size: 200% 200%;
+  animation: bgShift 16s ease-in-out infinite;
+}
+
+@keyframes bgShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

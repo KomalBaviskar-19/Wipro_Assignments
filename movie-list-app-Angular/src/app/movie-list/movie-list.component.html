@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="controls">
+    <div class="left">
+      <h2 class="heading">🎬 Popular Movies</h2>
+      <div class="avg">
+        <mat-icon color="warn">star</mat-icon>
+        <span>Average Rating: {{ averageRating | number:'1.1-1' }}</span>
+      </div>
+    </div>
+
+    <mat-form-field appearance="fill" class="genre-field">
+      <mat-label>Filter by Genre</mat-label>
+      <mat-select [(value)]="selectedGenre">
+        <mat-option *ngFor="let g of genres" [value]="g">{{ g }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="grid">
+    <mat-card *ngFor="let movie of filteredMovies()" class="card" [ngClass]="{ top: movie.rating >= 4.5 }">
+      <img mat-card-image [src]="movie.poster" [alt]="movie.title" />
+      <mat-card-content>
+        <div class="title-row">
+          <h3>{{ movie.title }}</h3>
+          <span class="year">{{ movie.year }}</span>
+        </div>
+        <p class="genre">{{ movie.genre }}</p>
+        <p class="desc">{{ movie.description }}</p>
+        <div class="rating">
+          <mat-icon *ngFor="let s of stars(movie.rating)" color="warn">
+            {{ s ? 'star' : 'star_border' }}
+          </mat-icon>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
