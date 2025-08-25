@@ -1,0 +1,42 @@
+/* Background gradient animation */
+body {
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7, #a1c4fd, #c2e9fb, #fbc2eb, #a6c1ee);
+  background-size: 600% 600%;
+  animation: gradientBG 20s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Card styling */
+.card {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Task list styling */
+.list-group-item {
+  border-radius: 10px;
+  margin-bottom: 5px;
+  background: #f8f9fa;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.list-group-item:hover {
+  transform: scale(1.02);
+  background: #e9ecef;
+}
+
+/* Completed task effect */
+.completed {
+  background-color: #d4edda !important;
+}
+
+.task-text {
+  font-size: 1rem;
+  color: #333;
+}
