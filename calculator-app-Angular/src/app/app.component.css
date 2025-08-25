@@ -1,0 +1,46 @@
+body, html {
+  margin: 0;
+  height: 100%;
+}
+
+.container {
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+  background: linear-gradient(270deg, #ff00cc, #3333ff, #00ffcc, #ffcc00, #ff3300);
+  background-size: 1000% 1000%;
+  animation: gradientMove 20s ease infinite;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+}
+
+.buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  color: black;
+  transition: 0.3s;
+}
+
+.buttons button:hover {
+  background: black;
+  color: white;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

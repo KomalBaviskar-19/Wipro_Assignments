@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+
+  <input type="number" [(ngModel)]="num1" placeholder="Enter first number">
+  <input type="number" [(ngModel)]="num2" placeholder="Enter second number">
+
+  <div class="buttons">
+    <button (click)="add()">+</button>
+    <button (click)="subtract()">-</button>
+    <button (click)="multiply()">*</button>
+    <button (click)="divide()">/</button>
+    <button (click)="modulus()">%</button>
+  </div>
+
+  <div *ngIf="result" class="alert alert-info mt-3">
+    {{ result }}
+  </div>
+</div>
