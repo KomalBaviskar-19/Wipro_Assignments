@@ -1,0 +1,39 @@
+<div class="music-playlist-container">
+  <h1>Music Playlist</h1>
+  
+  <div class="filters">
+    <mat-form-field appearance="fill">
+      <mat-label>Filter by Artist</mat-label>
+      <input matInput [(ngModel)]="artistFilter" (ngModelChange)="filterSongs()">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Filter by Album</mat-label>
+      <input matInput [(ngModel)]="albumFilter" (ngModelChange)="filterSongs()">
+    </mat-form-field>
+  </div>
+
+  <div class="card-list">
+    <mat-card *ngFor="let song of filteredSongs" [class.top-rated]="song.rating === 5">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image" [style.background-image]="'url(' + song.imageUrl + ')'"></div>
+        <mat-card-title>{{ song.name }}</mat-card-title>
+        <mat-card-subtitle>{{ song.artist }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="song.imageUrl" alt="Album cover for {{ song.name }}">
+      <mat-card-content>
+        <p>
+          <strong>Album:</strong> {{ song.album }} <br>
+          <strong>Duration:</strong> {{ song.duration }} <br>
+          <strong>Rating:</strong> 
+          <mat-icon *ngFor="let star of [].constructor(song.rating)">star</mat-icon>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button aria-label="Play song">
+          <mat-icon>play_circle_filled</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
