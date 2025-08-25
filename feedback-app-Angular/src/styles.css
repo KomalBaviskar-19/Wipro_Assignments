@@ -1,0 +1,5 @@
+/* ensure the gradient can occupy the full viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+}
